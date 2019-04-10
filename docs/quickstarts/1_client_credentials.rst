@@ -87,6 +87,7 @@ Loading the resource and client definitions happens in ``Startup.cs`` - the temp
     public void ConfigureServices(IServiceCollection services)
     {
         var builder = services.AddIdentityServer()
+            .AddDeveloperSigningCredential()
             .AddInMemoryIdentityResources(Config.GetIdentityResources())
             .AddInMemoryApiResources(Config.GetApis())
             .AddInMemoryClients(Config.GetClients());
